@@ -4,7 +4,7 @@
 
 class _Queue{
 public:
-    queue<Process> processQueue;
+    std::queue<Process> processQueue;
     int execute (int timeExecuted);//retorna quanto o tempo q tirou do processo
     void add_Queue(Process p);
     void print_Queue();
