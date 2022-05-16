@@ -1,33 +1,26 @@
-
-#include "scheduler.cpp"
-
+#include <iostream>
+#include <vector>
+#include "classes.h"
 using namespace std;
 
+
 int main (){
-    cout<<"hi"<<endl;
-    
 //testes
-//fazer um cin dps
-Process p1(1, 0, 20);
-Process p2(2, 0, 5);
-Process p3(3, 0, 40);
-
-RoundRobin q0(10);
-RoundRobin q1(15);
-q0.add_Queue(p1);
-
-
-Scheduler s;
-s.add_Queue(q0);
-s.add_Queue(q1);
-q0.print_Queue();
-cout<<"pid do processo 1 "<<q0.processQueue.front().get_pID()<<endl;
+Processo p1(1, 0, 20);
+Processo p2(2, 0, 5);
+Processo p3(3, 0, 40);
+QueueRoundRobin QRR10(10);
+QueueRoundRobin QRR15(15);
+Grafico_de_Gant resposta;
+int t=0;
 
 
 
-
+QRR10.add_QueueRoundRobin(p1);
+QRR10.add_QueueRoundRobin(p2);
+QRR10.add_QueueRoundRobin(p3);
 //fim dos testes
-/*
+
 while (t!=-1){
     if (QRR10.size()!=0){
         
@@ -63,5 +56,5 @@ while (t!=-1){
    t++; 
 }
 resposta.print();
-*/
+
 }
